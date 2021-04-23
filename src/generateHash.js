@@ -1,8 +1,8 @@
 var crypto = require('crypto');
-
+const config = require('./config');
 
 var uri = "https://authservice.priaid.ch/login";
-secret_key = "Cq6z2X7Zam9AWf43R";
+secret_key = config.password;
 
 //creating hmac object 
 var hmac = crypto.createHmac('md5', secret_key);

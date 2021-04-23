@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Select</title>
+</head>
+<body>
+        
+    <h1>The select multiple attribute</h1>
+    
+    <p>The multiple attribute specifies that multiple options can be selected at once:</p>
+    
+    <form action="http://localhost:8000/calculate-symptoms" method="POST">
+        <label for="symptoms">Choose your symptoms:</label><br>
+        <select name="symptoms" id="symptoms" multiple>
+            <option value="104">Back pain</option>
+            <option value="238">Anxiety</option>
+            <option value="17">Chest pain</option>
+            <option value="50">Diarrhea</option>
+        </select>
+        <br><br>
+
+        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br><br>
+
+        <label for="birth_year">Year of Birth:</label>
+        <input type="number" id="birth_year" name="birth_year"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    
+    <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple options.</p>
+
+
+</body>
+</html>
