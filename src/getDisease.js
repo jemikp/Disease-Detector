@@ -11,7 +11,7 @@ var auth = "Bearer " +  `${username}:${hash}`;
 
 var obj;
 
-module.exports.calculateDisease = function calculateDisease(symptoms_id, gender, birth_year, res){
+module.exports.calculateDisease = function calculateDisease(symptoms_id, gender, birth_year, res_of_parent){
 
     var myJsonSymptoms = JSON.stringify(symptoms_id);
 
@@ -30,11 +30,13 @@ module.exports.calculateDisease = function calculateDisease(symptoms_id, gender,
                 var result = JSON.parse(json)
                 var length_of_result = result.length;
 
+                var disease_name = new Array();
                 for(let i=0; i<length_of_result; i++){
+                    disease_name.push(result[i].Issue.Name);
                     console.log(result[i].Issue.Name +"\n");
                 }
-
-                res.render("../public/views/display-disease");
+                console.log
+                res_of_parent.render("../public/views/display-disease", {data: `${disease_name}`});
                 //console.log(result, result[0].Issue.Name, length_of_result)
             })
 
