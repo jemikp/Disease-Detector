@@ -35,8 +35,13 @@ module.exports.calculateDisease = function calculateDisease(symptoms_id, gender,
                     disease_name.push(result[i].Issue.Name);
                     console.log(result[i].Issue.Name +"\n");
                 }
-                console.log
-                res_of_parent.render("../public/views/display-disease", {data: `${disease_name}`});
+                //src/views/display-disease1.ejs
+                if(length_of_result == 0){
+                    res_of_parent.send("Please select appropriate symptoms")
+                }else{
+                    res_of_parent.render("display-disease1", {diseases : result});    
+                }
+                
                 //console.log(result, result[0].Issue.Name, length_of_result)
             })
 
