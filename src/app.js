@@ -6,16 +6,20 @@ const getDisease = require("./getDisease");
 
 const app = express();
 
+app.set('views', './src/views');
 app.set('view engine', 'ejs');  //ejs for web template, diaplaying html content
 app.use(bodyParser.urlencoded({ extended: true })); 
+app.use( express.static( "public" ) );
+app.use(express.static(__dirname + '/public'));
 
 
 app.get('/', (req, res) => {
-    res.render('../public/views');
+    res.render('');
+    //res.sendFile("../public/views/index.html")
 })
 
 app.get('/select-details.html', (req, res) => {
-    res.render("../public/views/select-details")
+    res.render("select-details")
 })
 
 app.post('/calculate-symptoms', (req, res) => {
@@ -40,7 +44,7 @@ app.post('/calculate-symptoms', (req, res) => {
 
 
 
-const PORT = 8000;
+const PORT = 5000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
