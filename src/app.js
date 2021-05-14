@@ -42,6 +42,9 @@ app.post('/calculate-symptoms', (req, res) => {
     getDisease.calculateDisease(symptoms_id, gender, birth_year, res);
 })
 
+app.post('/get-info-of-disease', (req, res) => {
+    
+})
 
 
 const PORT = 5000;

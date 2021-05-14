@@ -28,7 +28,7 @@ body {
   flex: 1;
   background-color: black;
   transition: 1s;
-  background-image: url(image.jpg);
+  background-image: url(../img/image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
