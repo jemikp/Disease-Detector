@@ -1,5 +1,5 @@
-const username = "w3TFb_GMAIL_COM_AUT";
-const password = "Cq6z2X7Zam9AWf43R";
+const username = "j2Q6L_GMAIL_COM_AUT";
+const password = "Ep57Zox2TAf6z8MHw";
 const url = "https://healthservice.priaid.ch/";
 
 

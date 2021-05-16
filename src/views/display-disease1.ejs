@@ -26,12 +26,15 @@
         <div class="news">
             <% if(diseases !=null) { %>
                 <% diseases.forEach(function(disease) { %>
-                    <a href="https://www.google.com/search?q=<%- disease.Issue.Name %>" target="_blank" class="news__card">
+                    <a class="news__card">
                     <h2>
                         <%- disease.Issue.Name %>
                     </h2>
-                    <h4>Accuracy: <%- disease.Issue.Accuracy %>
-                    </h4>
+                    <h4>Accuracy: <%- disease.Issue.Accuracy %></h4>
+                    <form action="http://localhost:8000/get-info-of-disease" method="POST" target="_blank">
+                        <!-- <input type="submit" value= "<%- disease.Issue.ID %>"" /> -->
+                        <button type="submit" name="issueId" value="<%- disease.Issue.ID %>">Read more</button>
+                    </form>
                     </a>
                     <% }) %>
                         <% } else{ %>

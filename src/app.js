@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const getDisease = require("./getDisease");
-
+const getIssueInfo = require("./getIssueInfo");
 
 
 const app = express();
@@ -43,11 +43,14 @@ app.post('/calculate-symptoms', (req, res) => {
 })
 
 app.post('/get-info-of-disease', (req, res) => {
-    
+    //console.log(req.body.issueId);
+    var issueId = req.body.issueId;
+
+    getIssueInfo.getIssueInfo(issueId, res);
 })
 
 
-const PORT = 5000;
+const PORT = 8000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
