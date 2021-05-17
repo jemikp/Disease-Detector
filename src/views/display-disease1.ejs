@@ -31,10 +31,14 @@
                         <%- disease.Issue.Name %>
                     </h2>
                     <h4>Accuracy: <%- disease.Issue.Accuracy %></h4>
+                    
+                    <button class="button button2">Find Doctor</button> 
+
                     <form action="http://localhost:8000/get-info-of-disease" method="POST" target="_blank">
                         <!-- <input type="submit" value= "<%- disease.Issue.ID %>"" /> -->
-                        <button type="submit" name="issueId" value="<%- disease.Issue.ID %>">Read more</button>
+                        <button class="button button2" type="submit" name="issueId" value="<%- disease.Issue.ID %>">Read more</button>
                     </form>
+                        
                     </a>
                     <% }) %>
                         <% } else{ %>

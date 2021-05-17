@@ -39,6 +39,7 @@ module.exports.calculateDisease = function calculateDisease(symptoms_id, gender,
                 if(length_of_result == 0){
                     res_of_parent.send("Please select appropriate symptoms")
                 }else{
+                    console.log(json);
                     res_of_parent.render("display-disease1", {diseases : result});    
                 }
                 
