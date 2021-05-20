@@ -1,29 +1,93 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/select-details.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Jemik-DiseaseDetector</title>
 
-    <title>On Select</title>
+
+
+    <style>
+        .form-group{
+            margin-top: 16px;
+        }
+
+        button, .birth-label{
+            margin-bottom: 16px;
+        }
+
+        body::before{
+            content:'';
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-image: linear-gradient(115deg,
+            rgba(48, 48, 48, 0.8),
+            rgba(160, 160, 160, 0.7)),url(./public/img/image.jpg);
+            background-color: white;
+            height: 100%;
+            margin: auto;
+            width: 100%;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        body{
+            
+            color: aliceblue;
+        }
+        .clue {
+  margin-left: 0.25rem;
+  font-size: 0.9rem;
+  color: #e4e4e4;
+}
+        
+
+
+        </style>
 </head>
 
-<body>
-    <div id="header">
-        <ul style="display:inline">
-            <li><a class="active" href="select-details.html">Home</a></li>
-            <li><a href="../html/about.html">About</a></li>
-            <li><a href="../html/contact.html">Contact</a></li>
-        </ul>
-    </div>
-    <div class="background">
-        
-        <div id="textbox" >
-            
-            <h1 class="h1">Please enter your appropriate details:</h1>
 
-            <form class="form" action="https://jemik-diseasedetector.herokuapp.com/calculate-symptoms" method="POST">
-                <label class="lable" for="symptoms">Choose your symptoms:</label><br><br>
-                <select size="10" width="15" name="symptoms" id="symptoms" class="multiple" multiple >
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Disease<span><b>Detector</b></span> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../html/contact.html">Contact</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- xx -->
+
+    <!-- main-page -->
+    <div class="container">
+        
+        <form action="https://jemik-diseasedetector.herokuapp.com/calculate-symptoms" method="post">
+
+
+            <div class="form-group">
+                <p>Choose your symptoms <br> <span class="clue">(press <kbd>Ctrl</kbd> to select multiple items)</span></p>
+                <select size="10" width="15" name="symptoms" id="symptoms" class="form-control" multiple>
                     <option value="188">Abdominal guarding</option>
                     <option value="10">abdominal pain</option>
                     <option value="223">Abdominal pain associated with menstruation</option>
@@ -226,40 +290,43 @@
                     <option value="142">Pain in the calves</option>
                     <option value="12">Pain in the limbs</option>
                     <option value="990">Pain of the anus</option>
-
-
                 </select>
-                
-                <p class="p">**Hold down the  <span class="span" >Ctrl (windows)</span> or  <span class="span" >Command (Mac)</span> <br>button to select multiple
-                    options.</p>
-                <div class="rightside">
-                    <label  class="lable" for="gender">Gender&nbsp;&nbsp;&nbsp;&nbsp;:</label>
-                    <input type="radio" name="gender" value="male">Male 
-                    <input type="radio" name="gender" value="female">Female
-                    <br><br><br>
+            </div>
 
-                    <label class="lable" for="birth_year">Birth Year:</label>
-                    <input type="number" id="birth_year" name="birth_year"><br><br>
-                </div>
-                <div>
-                    <button class="button button2">Submit</button>
-                </div>
-            </form>
+            <div class="form-group">
+                <p class="title">Gender</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender1">
+                    <label class="form-check-label" for="gender1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="gender2" >
+                    <label class="form-check-label" for="gender2">
+                        Female
+                    </label>
+                  </div>
+            </div>
+            <div class="form-group">
+                <label for="birth-year" class="birth-label">Birth-year</label>
+                <input type="number" class="form-control" max="2021" min="1950" required placeholder="Birth-year">
+            </div>
 
-            <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-            <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-            <script src="javascript.js"></script>
-            
-
-        </div>
-        
-        <div id="footer">Disease Detector</div>
+            <div class="form-group">
+                <button type="submit" class="btn-success form-control">Submit</button>
+                <button type="reset" class="btn-danger form-control">Reset</button>
+            </div>
+        </form>
         
     </div>
-</body>
 
+    <div style="height: 200px;"></div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+</body>
 </html>
