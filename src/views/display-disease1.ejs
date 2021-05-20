@@ -34,7 +34,7 @@
                     
                     <!-- <a href="https://google.com/search?q= best doctor for <%- disease.Issue.Name %> near me"><button class="button button2">Find Doctor</button></a>  -->
                     <button onclick="location.href='www.google.com/search?q= best doctor for <%- disease.Issue.Name %> near me'" class="button button2">Find Doctor</button>
-                    <form action="https://jemik-diseasedetector.herokuapp.com//get-info-of-disease" method="POST" target="_blank">
+                    <form action="https://jemik-diseasedetector.herokuapp.com/get-info-of-disease" method="POST" target="_blank">
                         <!-- <input type="submit" value= "<%- disease.Issue.ID %>"" /> -->
                         <button class="button button2" type="submit" name="issueId" value="<%- disease.Issue.ID %>">Read more</button>
                     </form>
