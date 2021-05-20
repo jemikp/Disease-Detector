@@ -5,8 +5,8 @@ const config = require('./config');
 
 const username = config.username;
 const password = config.password;
-const login_url = 'https://sandbox-authservice.priaid.ch/login';
-const url = "https://sandbox-healthservice.priaid.ch/diagnosis";
+const login_url = 'https://authservice.priaid.ch/login';
+const url = "https://healthservice.priaid.ch/diagnosis";
 var auth = "Bearer " +  `${username}:${hash}`;
 
 var obj;
