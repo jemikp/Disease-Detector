@@ -50,7 +50,7 @@ app.post('/get-info-of-disease', (req, res) => {
 })
 
 
-const PORT = 8000;
+const PORT = 8860;
 
 
 app.listen(PORT, () => {
