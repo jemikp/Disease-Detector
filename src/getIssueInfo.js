@@ -4,8 +4,8 @@ const config = require('./config');
 
 const username = config.username;
 const password = config.password;
-const login_url = 'https://authservice.priaid.ch/login';
-const url = "https://healthservice.priaid.ch/diagnosis";
+const login_url = 'https://sandbox-authservice.priaid.ch/login';
+const url = "https://sandbox-healthservice.priaid.ch/issues";
 var auth = "Bearer " +  `${username}:${hash}`;
 
 
@@ -21,7 +21,7 @@ module.exports.getIssueInfo = function getIssueDetails(issueId, res_of_parent){
 
         var token = json.Token;
 
-        fetch(`https://healthservice.priaid.ch/issues/${issueId}/info?token=${token}&language=en-gb`)
+        fetch(`${url}/${issueId}/info?token=${token}&language=en-gb`)
             .then(res => res.text())
             .then(json => {
                 var result = JSON.parse(json)
