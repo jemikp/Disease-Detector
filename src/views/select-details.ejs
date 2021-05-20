@@ -24,9 +24,9 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background-image: linear-gradient(115deg,
+             background-image:url(./public/img/image.jpg); /*linear-gradient(115deg,
             rgba(48, 48, 48, 0.8),
-            rgba(160, 160, 160, 0.7)),url(./public/img/image.jpg);
+            rgba(160, 160, 160, 0.7)), */
             background-color: white;
             height: 100%;
             margin: auto;
@@ -54,7 +54,7 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Disease<span><b>Detector</b></span> </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +82,7 @@
     <!-- main-page -->
     <div class="container">
         
-        <form action="https://jemik-diseasedetector.herokuapp.com/calculate-symptoms" method="post">
+        <form action="https://jemik-diseasedetector.herokuapp.com/calculate-symptoms" method="get">
 
 
             <div class="form-group">
@@ -296,13 +296,14 @@
             <div class="form-group">
                 <p class="title">Gender</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="gender1">
+                    <input class="form-check-input" type="radio" name="gender" id="gender1" value="male">
+  
                     <label class="form-check-label" for="gender1">
                       Male
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="gender2" >
+                    <input class="form-check-input" type="radio" name="gender" id="gender2" value="female">
                     <label class="form-check-label" for="gender2">
                         Female
                     </label>
@@ -310,7 +311,7 @@
             </div>
             <div class="form-group">
                 <label for="birth-year" class="birth-label">Birth-year</label>
-                <input type="number" class="form-control" max="2021" min="1950" required placeholder="Birth-year">
+                <input name="birth_year" type="number" class="form-control" max="2021" min="1950" required placeholder="Birth-year">
             </div>
 
             <div class="form-group">
