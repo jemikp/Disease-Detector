@@ -50,7 +50,7 @@ app.post('/get-info-of-disease', (req, res) => {
 })
 
 
-const PORT = 8860;
+const PORT = process.env.PORT || 8860;
 
 
 app.listen(PORT, () => {
